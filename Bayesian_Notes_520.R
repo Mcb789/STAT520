@@ -8,7 +8,7 @@ BBB<-function(n,p,alpha,beta)
   print("Observed Proportion, Posterior Mean")
   p_hat_Post<-(alpha+xx)/(n+alpha+beta)
   print(c(p_hat,p_hat_Post))
-  x  <- seq(0, 1, 0.01)
+  x  <- seq(0, 1, 0.02)
   Prior <- dbeta(x,alpha,beta)
   Posterior <- dbeta(x,alpha+xx,n+beta-xx)
 
@@ -43,7 +43,7 @@ BNN<-function(n,mu,sigma,theta,tau)
   print(c(xbar,xbar_Post))
   a<-min(xx)-1
   b<-max(xx)+1
-  x  <- seq(a, b, 0.01)
+  x  <- seq(a, b, 0.02)
   Prior <- dnorm(x,theta,tau)
   Posterior <- dnorm(x,theta_post,tau_post)
 
